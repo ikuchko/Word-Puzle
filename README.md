@@ -1,6 +1,6 @@
 # Word Puzzle game.
 
-##### Using java methods, app changes all vowels in sentence and give you a chance to guess it.
+##### Using java methods, app changes all vowels in sentence with the dash symbol "-" and give you a chance to guess it.
 
 #### By **Illia Kuchko**
 
