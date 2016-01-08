@@ -14,4 +14,10 @@ public class WordPuzzleTest {
     WordPuzzle sentence = new WordPuzzle();
     assertEquals("H-w -r- y--?", sentence.changeVowels("How are you?"));
   }
+
+  @Test
+  public void puzzle_ReplaceVowelsWithoutCaseSensitivityInSentenceHOwArEYOU_Hwry(){
+    WordPuzzle sentence = new WordPuzzle();
+    assertEquals("H-w -r- y--?", sentence.changeVowels("How ArE yOU?"));
+  }
 }
