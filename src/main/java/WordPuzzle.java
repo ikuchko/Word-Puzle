@@ -9,12 +9,10 @@ public class WordPuzzle {
 
   public static String changeVowels(String sentence){
     //ArrayList<Char> letters = new ArrayList<Char>();
-    String[] lettersLowerCase = {"a", "e", "i", "o", "u"};
-    String[] lettersUpperCase = {"A", "E", "I", "O", "U"};
+    String[] letters = {"a", "e", "i", "o", "u", "A", "E", "I", "O", "U"};
     //sentence = sentence.toLowerCase();
-    for (Integer i=0; i<lettersLowerCase.length; i++){
-      sentence = sentence.replace(lettersLowerCase[i], "-");
-      sentence = sentence.replace(lettersUpperCase[i], "-");
+    for (Integer i=0; i<letters.length; i++){
+      sentence = sentence.replace(letters[i], "-");
     }
     return sentence;
   }

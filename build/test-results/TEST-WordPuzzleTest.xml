@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="WordPuzzleTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-01-08T19:09:51" hostname="epicodus-115.local" time="0.002">
+<testsuite name="WordPuzzleTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2016-01-08T19:12:19" hostname="epicodus-115.local" time="0.002">
   <properties/>
   <testcase name="puzzle_ReplaceVowelsInSentenceHowAreYou_Hwry" classname="WordPuzzleTest" time="0.001"/>
   <testcase name="puzzle_ReplaceVowelsWithoutCaseSensitivityInSentenceHOwArEYOU_Hwry" classname="WordPuzzleTest" time="0.0"/>
