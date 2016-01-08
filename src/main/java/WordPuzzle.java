@@ -10,8 +10,9 @@ public class WordPuzzle {
   public static String changeVowels(String sentence){
     //ArrayList<Char> letters = new ArrayList<Char>();
     String[] letters = {"a", "e", "i", "o", "u"};
-    for (Integer i=0; i<letters.length-1; i++){
-      return sentence.replace(letters[i], "-");
+    for (Integer i=0; i<letters.length; i++){
+      sentence = sentence.replace(letters[i], "-");
     }
+    return sentence;
   }
 }
