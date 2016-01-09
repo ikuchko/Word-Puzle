@@ -33,12 +33,8 @@ public class WordPuzzle {
     get("puzzleResult", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
 
-
       hash.put(2, request.queryParams("userGuesss"));
-
       Boolean result = gameResult(hash.get(1), hash.get(2));
-
-
     //  Boolean result = true;
 
     //  model.put ("ress", hash.get(1));
@@ -51,7 +47,6 @@ public class WordPuzzle {
       } else {
         model.put("template", "templates/home.vtl");
       }
-
       return new ModelAndView(model, layout);
 
     }, new VelocityTemplateEngine());
