@@ -20,4 +20,10 @@ public class WordPuzzleTest {
     WordPuzzle sentence = new WordPuzzle();
     assertEquals("H-w -r- y--?", sentence.changeVowels("How ArE yOU?"));
   }
+
+  @Test
+  public void puzzleResult_caseSensitivityTestCATcat_true(){
+    WordPuzzle sensetivity = new WordPuzzle();
+    assertEquals(true, sensetivity.gameResult("CAT", "cat"));
+  }
 }

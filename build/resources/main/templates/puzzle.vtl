@@ -1,6 +1,9 @@
-<div class="form-group">
-  <h4>This is your puzzle. Try to guess!</h4>
-  <h3>$key</h3>
-  <label for="userGuess">Enter your guess</label>
-  <input id="userGuess" name="userGuess" type="text" class="form-control">
-</div>
+<form action='/puzzleResult' method='get'>
+  <div class="form-group">
+    <h4>This is your puzzle. Try to guess!</h4>
+    <h3 class="well">$key</h3>
+    <label for="userGuesss">Enter your guess</label>
+    <input id="userGuesss" name="userGuesss" type="text" class="form-control">
+  </div>
+  <button type="submit" class="btn">Try...</button>
+</form>
