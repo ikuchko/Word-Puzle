@@ -8,7 +8,7 @@ import static spark.Spark.*;
 public class WordPuzzle {
   public static void main(String[] args) {
     String layout = "templates/layout.vtl";
-    HashMap<Integer, String> hash = new HashMap<Integer, String>();
+    HashMap<String, String> puzzleBuffer = new HashMap<String, String>();
 
     get("/", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
@@ -16,37 +16,27 @@ public class WordPuzzle {
       return new ModelAndView(model, layout);
     }, new VelocityTemplateEngine());
 
-    get("puzzle", (request, response) -> {
+    post("puzzle", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
       model.put("template", "templates/puzzle.vtl");
 
       //String userInput = request.queryParams("sentence");
-      hash.put(1, request.queryParams("sentence"));
+      puzzleBuffer.put("firstInput", request.queryParams("sentence"));
 
-      String puzzle = changeVowels(hash.get(1));
+      String puzzle = changeVowels(puzzleBuffer.get("firstInput"));
 
       model.put("key", puzzle);
       return new ModelAndView(model, layout);
 
     }, new VelocityTemplateEngine());
 
-    get("puzzleResult", (request, response) -> {
+    post("puzzleResult", (request, response) -> {
       Map<String, Object> model = new HashMap<String, Object>();
+      model.put("template", "templates/puzzleResult.vtl");
 
-      hash.put(2, request.queryParams("userGuesss"));
-      Boolean result = gameResult(hash.get(1), hash.get(2));
-    //  Boolean result = true;
+      puzzleBuffer.put("guessInput", request.queryParams("userGuesss"));
 
-    //  model.put ("ress", hash.get(1));
-    //  model.put ("res", hash.get(2));
-
-    //  model.put ("res", true);
-
-      if (result) {
-        model.put("template", "templates/puzzleResult.vtl");
-      } else {
-        model.put("template", "templates/home.vtl");
-      }
+      model.put("result", gameResult(puzzleBuffer.get("firstInput"), puzzleBuffer.get("guessInput")));
       return new ModelAndView(model, layout);
 
     }, new VelocityTemplateEngine());
@@ -66,7 +56,6 @@ public class WordPuzzle {
 
   public static Boolean gameResult(String masterString, String guessString){
     if (masterString.toLowerCase().equals(guessString.toLowerCase())) {
-  //  if (masterString.equals(guessString)) {
       return true;
     } else {
       return false;

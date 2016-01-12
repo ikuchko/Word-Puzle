@@ -34,7 +34,7 @@ public class AppTest extends FluentTest {
     goTo("http://localhost:4567/");
     fill("#sentence").with("Never give up!");
     submit(".btn");
-    fill("#userGuesss").with("N-v-r g-v- -p!");
+    fill("#userGuesss").with("Never give up!");
     submit(".btn");
     assertThat(pageSource()).contains("Congratulation! How did you know?");
   }
